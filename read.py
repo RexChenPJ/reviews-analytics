@@ -17,3 +17,13 @@ for d in data:
 	read_len = read_len + i #將每則留言加總
 print ('留言的平均長度為' , read_len / len(data) ,'字') #去除以總筆數
 
+
+#篩選留言長度，小於100
+#加入到新的清單
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d)
+print('留言長度小於100的留言，總共有', len(new) ,'筆')
+print(new[0])
+print(new[1])
