@@ -27,3 +27,30 @@ for d in data:
 print('留言長度小於100的留言，總共有', len(new) ,'筆')
 print(new[0])
 print(new[1])
+
+#篩選有提到good的留言
+
+good = []
+for d in data:
+	if 'good' in d: #如果清單內有good
+		good.append(d)
+print('一共有', len(good) ,'筆，提到good。')
+
+#上面篩選GOOD清單，快寫法:
+
+good = [d for d in data if 'good' in d]
+print(len(good))
+
+#bad有沒有再留言內
+#有的話印true
+#沒有印false
+
+bad = []
+for d in data:
+	bad.append('bad' in d)
+print(bad)
+
+#快寫法
+
+bad = ['bad' in d for d in data]
+print(bad)
