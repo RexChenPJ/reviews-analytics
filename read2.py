@@ -1,6 +1,7 @@
+import time
+
 data = []
 count = 0
-
 #讀取檔案
 with open('reviews.txt', 'r') as f:
 	for line in f:
@@ -60,6 +61,7 @@ print(bad)
 
 
 #文字計數
+start_time = time.time()
 wc = {} #word_count
 for d in data:
 	words = d.split()
@@ -72,7 +74,8 @@ for d in data:
 for word in wc:
 	if wc[word] > 1000000:
 		print(word, wc[word])
-
+end_time = time.time()
+print('花了', end_time - start_time, '秒')
 while  True:
 	word = input('請問你想查甚麼字: ')
 	if word == 'q':
